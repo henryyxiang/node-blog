@@ -5,9 +5,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var postRouter = require('./routes/postRouter');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// mongoose model setup
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+
+const posts = require('./models/posts');
+
+// database communication setup
+const url = 'mongodb://localhost:27017/blog';
+const connect = mongoose.connect(url);
+connect.then((db) => {
+  console.log('connected correctly to server');
+}, (err) => console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,7 +34,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
+app.use('/post', postRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

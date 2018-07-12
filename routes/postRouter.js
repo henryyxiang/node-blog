@@ -4,10 +4,11 @@ const mongoose = require('mongoose');
 
 const Posts = require('../models/posts');
 
-const indexRouter = express.Router();
+const postRouter = express.Router();
 
 
-indexRouter.route('/')
+
+postRouter.route('/')
 .get((req,res,next) => {
     Posts.find({})
     .then((posts) => {
@@ -20,4 +21,16 @@ indexRouter.route('/')
     res.statusCode = 403;
 });
 
-module.exports = indexRouter;
+postRouter.route('/:postId')
+.get((req,res,next) => {
+    Posts.findById(req.params.postId)
+    .then((posts) => {
+        res.send = req.params.postId;
+    }, (err) => next(err))
+    .catch((err) => next(err));
+})
+.post((req,res,next) => {
+    res.statusCode = 403;
+});
+
+module.exports = postRouter;
