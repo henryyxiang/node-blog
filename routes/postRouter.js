@@ -12,7 +12,6 @@ postRouter.route('/')
 .get((req,res,next) => {
     Posts.find({})
     .then((posts) => {
-        console.log("ahha");
         res.render('index', {posts: posts});
     }, (err) => next(err))
     .catch((err) => next(err));
@@ -23,9 +22,9 @@ postRouter.route('/')
 
 postRouter.route('/:postId')
 .get((req,res,next) => {
-    Posts.findById(req.params.postId)
+    Posts.find({})
     .then((posts) => {
-        res.send = req.params.postId;
+        res.render('article', {posts: posts});
     }, (err) => next(err))
     .catch((err) => next(err));
 })

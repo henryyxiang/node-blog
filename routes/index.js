@@ -11,7 +11,6 @@ indexRouter.route('/')
 .get((req,res,next) => {
     Posts.find({})
     .then((posts) => {
-        console.log("ahha");
         res.render('index', {posts: posts});
     }, (err) => next(err))
     .catch((err) => next(err));
