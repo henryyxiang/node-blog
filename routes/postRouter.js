@@ -6,8 +6,6 @@ const Posts = require('../models/posts');
 
 const postRouter = express.Router();
 
-
-
 postRouter.route('/')
 .get((req,res,next) => {
     Posts.find({})

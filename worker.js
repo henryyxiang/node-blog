@@ -1,25 +1,26 @@
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+const mongoose = require('mongoose');
+const Posts = require('./models/posts');
 
 //const url = 'mongodb://$[username]:$[password]@$[hostlist]/$[database]?authSource=$[authSource]';
 const url = 'mongodb://localhost:27017/blog';
+mongoose.connect(url);
 
-MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
-    assert.equal(null, err);
-    console.log('Connect correctly to the server');
-    const db = client.db("blog");
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('connected correctly to server');
 
-    for (let index = 1; index <= 10; index++) {
+    var post = new Posts({
+        id: 02,
+        title: "Test Title III",
+        content: "The test content III."
+    });
 
-        var titleContent = "Test Title " + index;
-        var bodyContent = "Test body " + index;
-    
-        db.collection('posts').insertOne({
-            title: titleContent,
-            date: "July 11, 2018",
-            content: bodyContent
-          });
-    }
-
-    client.close();
-  });
+    post.save(function (err, post) {
+        if (err) {
+            return console.error(err);
+        } else {
+            console.log("save successful:\n" + post);
+        }
+    });
+});
