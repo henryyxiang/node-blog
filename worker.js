@@ -11,9 +11,9 @@ db.once('open', function() {
     console.log('connected correctly to server');
 
     var post = new Posts({
-        id: 05,
-        title: "Test Title V",
-        content: "The test content V."
+        id: 07,
+        title: "Add MarkDown Tag Test",
+        content: "######The test h6 tile V\na p tag test\na p tag test"
     });
 
     post.save(function (err, post) {
