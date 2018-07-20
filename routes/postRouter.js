@@ -20,9 +20,9 @@ postRouter.route('/')
 
 postRouter.route('/:postId')
 .get((req,res,next) => {
-    Posts.find({})
-    .then((posts) => {
-        res.render('article', {posts: posts});
+    Posts.findOne({id: req.params.postId})
+    .then((post) => {
+        res.render('article', {post: post});
     }, (err) => next(err))
     .catch((err) => next(err));
 })

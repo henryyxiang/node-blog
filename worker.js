@@ -11,9 +11,9 @@ db.once('open', function() {
     console.log('connected correctly to server');
 
     var post = new Posts({
-        id: 02,
-        title: "Test Title III",
-        content: "The test content III."
+        id: 05,
+        title: "Test Title V",
+        content: "The test content V."
     });
 
     post.save(function (err, post) {

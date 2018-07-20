@@ -4,11 +4,9 @@
         <main class="col-12 col-md-9">
           <div class="container">
             <article class="row bg-white border-bottom border-light p-4">
-              <h5 class="col-12">栈是和列表类似的一种数据结构</h5>
-              <div class="col-12 text-dark"><p>栈，又叫堆栈，是和列表类似的一种数据结构，但是却更高效，因为栈内的元素只能通过列表的一端访问，称为栈顶，数据只
-                能在栈顶添加或删除，遵循 先入后出(LIFO，last-in-first-out) 的原则，普遍运用于计算机的方方面面。栈，又叫堆栈，是和列表类似的一种数据结构，但是却更高效，因为栈内的元素只能通过列表的一端访问，称为栈顶，数据只能在栈顶添加
-                或删除，遵循 先入后出(LIFO，last-in-first-out) 的原则，普遍运用于计算机的方方面面。</p></div>
-              <span class="col-12 text-secondary my-1 date">July 6, 2018</span>
+              <h5 class="col-12"><%= post.title %></h5>
+              <div class="col-12 text-dark"><%= post.content %></div>
+              <span class="col-12 text-secondary my-1 date"><%= post.date %></span>
           </div>
         </main>
         <aside class="col-12 col-md-3">
