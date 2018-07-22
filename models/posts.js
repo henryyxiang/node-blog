@@ -8,12 +8,20 @@ const postSchema = new Schema({
     },
     title: {
         type: String,
+        trim: true,
         required: true
+    },
+    abstract: {
+        type: String,
+        maxLength: 200,
+        trim: true,
+        default: ''
     },
     content: {
         type: String,
+        trim: true,
         required: true
-    }
+    },
 }, {
     timestamps: true,
 });

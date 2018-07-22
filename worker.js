@@ -16,8 +16,8 @@ db.once('open', () => {
         if (err) throw err;
 
         var post = new Posts({
-            id: 09,
-            title: "Read .md into content field! ", //can do parse
+            id: 1,
+            title: "Test for default method", //can do parse
             content: data
         });
     

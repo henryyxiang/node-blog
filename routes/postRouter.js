@@ -13,7 +13,10 @@ postRouter.route('/')
     Posts.find({})
     .then((posts) => {
         posts.forEach(post => {
-            post.content = md.render(post.content);
+            if (!post.abstract) {
+                post.content = md.render(post.content);
+                post.abstract = post.content.replace(/(<([^>]+)>)/ig,"").substring(0,150) + '...';
+            }
         });
         res.render('index', {posts: posts});
     }, (err) => next(err))
