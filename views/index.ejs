@@ -6,8 +6,8 @@
             <% posts.forEach(function (post, index) { %>
             <article class="row bg-white border-bottom border-light pt-3">
               <h5 class="col-12"><a class="text-body" href="/post/<%= post.id %>"><%= post.title %></a></h5>
-              <div class="col-12 text-dark abstract"><%= post.content %></div>
-              <span class="col-12 text-secondary my-1 date"><%= post.date %></span>
+              <div class="col-12 text-dark abstract"><%- post.content %></div>
+              <span class="col-12 text-secondary my-1 date"><%= post.createdAt %></span>
             </article>
             <% }) %>
             <article class="row bg-white border-bottom border-light pt-3">
