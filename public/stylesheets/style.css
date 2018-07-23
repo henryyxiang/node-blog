@@ -17,6 +17,8 @@ footer{
 }
 
 .copy-right {
+    font-family: Cochin, Georgia, 'Times New Roman', serif;
+    font-style: italic;
     position: absolute;
     top: 50%;
     left: 50%;
