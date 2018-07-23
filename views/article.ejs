@@ -1,7 +1,7 @@
 <% include head %>
     <div class="container-fluid my-3">
       <div class="row">
-        <main class="col-12 col-md-9">
+        <main class="col-12 col-md-9 mx-auto">
           <div class="container">
             <article class="row bg-white border-bottom border-light p-4">
               <h5 class="col-12"><%= post.title %></h5>
@@ -9,18 +9,6 @@
               <span class="col-12 text-secondary my-1 date">Last Updated at <%= post.updatedAt %></span>
           </div>
         </main>
-        <aside class="col-12 col-md-3">
-          <div class="container">
-            <div class="card bg-white mb-2 d-none d-md-block border-light">
-              <div class="card-body">
-                <h6 class="card-title mb-2 text-muted">下一篇</h6>
-                <p><a href="#" class="card-link">标题</a></p>
-                <h6 class="card-title mb-2 text-muted">上一篇</h6>
-                <p><a href="#" class="card-link">标题</a></p>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </div>
 <% include footer %>
