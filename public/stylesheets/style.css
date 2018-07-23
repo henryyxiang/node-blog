@@ -24,3 +24,8 @@ footer{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+.my-brand {
+    font-family: Cochin, Georgia, 'Times New Roman', serif;
+    font-style: italic;
+}
