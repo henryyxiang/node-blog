@@ -8,7 +8,7 @@ var md = new MarkdownIt();
 
 indexRouter.route('/')
 .get((req,res,next) => {
-    Posts.find({})
+    Posts.find({}, null, {sort: '-createdAt'})
     .then((posts) => {
         posts.forEach(post => {
             if (!post.abstract) {
