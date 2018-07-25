@@ -14,8 +14,6 @@ var app = express();
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const posts = require('./models/posts');
-
 // database communication setup
 const url = 'mongodb://localhost:27017/blog';
 const connect = mongoose.connect(url);
