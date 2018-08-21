@@ -23,4 +23,13 @@ indexRouter.route('/')
 .post((req,res,next) => {
     res.statusCode = 403;
 });
+
+indexRouter.route('/2048-game')
+.get((req,res,next) => {
+    res.render('game');
+})
+.post((req,res,next) => {
+    res.statusCode = 403;
+});
+
 module.exports = indexRouter;
