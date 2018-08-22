@@ -1,0 +1,87 @@
+body {
+    font-family: 'Lucida Sans Unicode';
+}
+  
+p {
+    text-align: center;
+}
+  
+table {
+    margin: 0 auto;
+}
+  
+button {
+    width: 65px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 10px;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: block;
+    margin: 10px auto;
+}
+  
+.cell {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.number {
+    color: #000;
+    font-size: 16px;
+}
+  
+.score {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.color-2 {
+    background-color: #50C8FF;
+  }
+  
+  .color-4 {
+    background-color: green;
+  }
+  
+  .color-8 {
+    background-color: red;
+  }
+  
+  .color-16 {
+    background-color: orange;
+  }
+  
+  .color-32 {
+    background-color: yellow;
+  }
+  
+  .color-64 {
+    background-color: blue;
+  }
+  
+  .color-128 {
+    background-color: purple;
+  }
+  
+  .color-256 {
+    background-color: pink;
+  }
+  
+  .color-512 {
+    background-color: #50C8FF;
+  }
+  
+  .color-1024 {
+    background-color: green;
+  }
+  
+  .color-2048 {
+    background-color: blue;
+  }
